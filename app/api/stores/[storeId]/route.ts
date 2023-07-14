@@ -11,7 +11,7 @@ export async function PATCH(req: Request, { params }: { params: { storeId: strin
     const { name } = body;
 
     if (!userId) {
-      return new NextResponse('Unauthorized', { status: 401 });
+      return new NextResponse('Unalthenticated', { status: 401 });
     }
 
     if (!name) {
@@ -44,7 +44,7 @@ export async function DELETE(req: Request, { params }: { params: { storeId: stri
     const { userId } = auth();
 
     if (!userId) {
-      return new NextResponse('Unauthorized', { status: 401 });
+      return new NextResponse('Unalthenticated', { status: 401 });
     }
 
     if (!params.storeId) {
